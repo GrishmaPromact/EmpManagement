@@ -9,12 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.androiddevs.grocerylist.ui.shoppinglist.EmpViewModelFactory
 import com.grishma.adddemo.adapter.CustomDropDownAdapter
 import com.grishma.adddemo.adapter.DepartmentItemAdapter
 import com.grishma.adddemo.data.viewmodel.DepartmentViewModel
 import com.grishma.adddemo.data.viewmodel.DepartmentViewModelFactory
 import com.grishma.adddemo.data.viewmodel.EmpViewModel
+import com.grishma.adddemo.data.viewmodel.EmpViewModelFactory
 import com.grishma.adddemo.db.entities.DepartmentItem
 import com.grishma.adddemo.db.entities.EmployeeItem
 import kotlinx.android.synthetic.main.activity_main.*
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
 
         //Adapter for spinner
-        var spinnerAdapter = CustomDropDownAdapter(this, myStrings)
+        val spinnerAdapter = CustomDropDownAdapter(this, myStrings)
         itemSpinner?.adapter = spinnerAdapter
 
         itemSpinner?.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {

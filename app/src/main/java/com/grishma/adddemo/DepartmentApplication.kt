@@ -1,10 +1,10 @@
 package com.grishma.adddemo
 
 import android.app.Application
-import com.androiddevs.grocerylist.ui.shoppinglist.DepartmentViewModelFactory
-import com.androiddevs.grocerylist.ui.shoppinglist.EmpViewModelFactory
 import com.grishma.adddemo.data.repositories.DepartmentRepository
 import com.grishma.adddemo.data.repositories.EmployeeRepository
+import com.grishma.adddemo.data.viewmodel.DepartmentViewModelFactory
+import com.grishma.adddemo.data.viewmodel.EmpViewModelFactory
 import com.grishma.adddemo.db.DepartmentDatabase
 import com.grishma.adddemo.db.EmpDatabase
 import org.kodein.di.Kodein

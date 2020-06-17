@@ -3,8 +3,6 @@ package com.grishma.adddemo.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.grishma.adddemo.R
 import com.grishma.adddemo.data.viewmodel.DepartmentViewModel
@@ -57,6 +55,6 @@ class EmpItemAdapter(
     inner class EmpViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
 
-private fun <T> LiveData<T>.observe(empItemAdapter: EmpItemAdapter, observer: Observer<T>) {
+private fun observe() {
 
 }

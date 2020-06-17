@@ -1,9 +1,8 @@
-package com.androiddevs.grocerylist.ui.shoppinglist
+package com.grishma.adddemo.data.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.grishma.adddemo.data.repositories.EmployeeRepository
-import com.grishma.adddemo.data.viewmodel.EmpViewModel
 
 @Suppress("UNCHECKED_CAST")
 class EmpViewModelFactory(

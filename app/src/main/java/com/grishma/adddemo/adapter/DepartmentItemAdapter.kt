@@ -4,16 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.androiddevs.grocerylist.ui.shoppinglist.EmpViewModelFactory
 import com.grishma.adddemo.AddDialogListener
 import com.grishma.adddemo.AddEmployeeItemDialog
 import com.grishma.adddemo.R
 import com.grishma.adddemo.data.viewmodel.DepartmentViewModel
 import com.grishma.adddemo.data.viewmodel.EmpViewModel
+import com.grishma.adddemo.data.viewmodel.EmpViewModelFactory
 import com.grishma.adddemo.db.entities.DepartmentItem
 import com.grishma.adddemo.db.entities.EmployeeItem
 import kotlinx.android.synthetic.main.item_categories.view.*
@@ -53,10 +51,7 @@ class DepartmentItemAdapter(
 
         holder.itemView.rvEmployee?.layoutManager = LinearLayoutManager(context)
         holder.itemView.rvEmployee?.adapter = adapterEmp
-        viewModel1.getAllEmpItems().observe(this@DepartmentItemAdapter, Observer {
-            adapterEmp.itemsEmpList = it
-            adapterEmp.notifyDataSetChanged()
-        })
+        observe()
         holder.itemView.tvCategory.text = curShoppingItem.name
 
         holder.itemView.ivAdd.setOnClickListener {
@@ -68,10 +63,7 @@ class DepartmentItemAdapter(
 
                         holder.itemView.rvEmployee?.layoutManager = LinearLayoutManager(context)
                         holder.itemView.rvEmployee?.adapter = adapterEmp
-                        viewModel1.getAllEmpItems().observe(this@DepartmentItemAdapter, Observer {
-                            adapterEmp.itemsEmpList = it
-                            adapterEmp.notifyDataSetChanged()
-                        })
+                        observe()
                         viewModel.insert(curShoppingItem)
                     }
                 }).show()
@@ -90,7 +82,7 @@ class DepartmentItemAdapter(
     }
 }
 
-private fun <T> LiveData<T>.observe(departmentItemAdapter: DepartmentItemAdapter, observer: Observer<T>) {
+private fun observe() {
 
 }
 
