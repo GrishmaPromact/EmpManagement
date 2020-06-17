@@ -17,7 +17,6 @@ import com.grishma.adddemo.data.viewmodel.EmpViewModel
 import com.grishma.adddemo.db.entities.DepartmentItem
 import com.grishma.adddemo.db.entities.EmployeeItem
 import kotlinx.android.synthetic.main.item_categories.view.*
-import kotlinx.android.synthetic.main.item_categories.view.rvEmployee
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.generic.instance
@@ -45,7 +44,7 @@ class DepartmentItemAdapter(
 
     override fun onBindViewHolder(holder: DepartmentViewHolder, position: Int) {
         val curShoppingItem = items[position]
-        var adapterEmp = EmpItemAdapter(
+        val adapterEmp = EmpItemAdapter(
             curShoppingItem.empList,
             viewModel1,
             viewModel,
@@ -61,7 +60,6 @@ class DepartmentItemAdapter(
         holder.itemView.tvCategory.text = curShoppingItem.name
 
         holder.itemView.ivAdd.setOnClickListener {
-           //addButtonListener.onAddButtonClickedOfDepartment(curShoppingItem)
             AddEmployeeItemDialog(context,curShoppingItem, object : AddDialogListener {
                     override fun onAddButtonClicked(
                         item: EmployeeItem,

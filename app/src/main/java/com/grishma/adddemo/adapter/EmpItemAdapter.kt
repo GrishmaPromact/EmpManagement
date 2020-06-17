@@ -12,7 +12,6 @@ import com.grishma.adddemo.data.viewmodel.EmpViewModel
 import com.grishma.adddemo.db.entities.DepartmentItem
 import com.grishma.adddemo.db.entities.EmployeeItem
 import kotlinx.android.synthetic.main.item_employee.view.*
-import kotlinx.coroutines.processNextEventInCurrentThread
 
 class EmpItemAdapter(
     var itemsEmpList: MutableList<EmployeeItem>,

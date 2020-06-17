@@ -4,8 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.grishma.adddemo.db.entities.DepartmentDao
-import com.grishma.adddemo.db.entities.DepartmentItem
 import com.grishma.adddemo.db.entities.EmpDao
 import com.grishma.adddemo.db.entities.EmployeeItem
 

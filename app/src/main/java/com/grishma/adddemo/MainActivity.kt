@@ -1,6 +1,5 @@
 package com.grishma.adddemo
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -10,18 +9,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.androiddevs.grocerylist.ui.shoppinglist.DepartmentViewModelFactory
 import com.androiddevs.grocerylist.ui.shoppinglist.EmpViewModelFactory
 import com.grishma.adddemo.adapter.CustomDropDownAdapter
 import com.grishma.adddemo.adapter.DepartmentItemAdapter
-import com.grishma.adddemo.adapter.EmpItemAdapter
 import com.grishma.adddemo.data.viewmodel.DepartmentViewModel
+import com.grishma.adddemo.data.viewmodel.DepartmentViewModelFactory
 import com.grishma.adddemo.data.viewmodel.EmpViewModel
 import com.grishma.adddemo.db.entities.DepartmentItem
 import com.grishma.adddemo.db.entities.EmployeeItem
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_categories.*
-import kotlinx.android.synthetic.main.item_categories.view.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
@@ -53,19 +49,6 @@ class MainActivity : AppCompatActivity(), KodeinAware {
             adapter.notifyDataSetChanged()
         })
 
-/*
-        val adapterEmp = EmpItemAdapter(mutableListOf(), viewModel1)
-
-        rvEmployee?.layoutManager = LinearLayoutManager(this)
-        rvEmployee?.adapter = adapterEmp
-
-        viewModel1.getAllEmpItems().observe(this, Observer {
-            adapterEmp.itemsEmpList = it
-            adapterEmp.notifyDataSetChanged()
-        })*/
-
-
-
 
         //String array.
         val myStrings = ArrayList<String>()//Creating an empty arraylist
@@ -76,7 +59,6 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
 
         //Adapter for spinner
-        //itemSpinner.adapter = CustomDropDownAdapter(this, myStrings)
         var spinnerAdapter = CustomDropDownAdapter(this, myStrings)
         itemSpinner?.adapter = spinnerAdapter
 

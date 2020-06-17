@@ -2,7 +2,6 @@ package com.grishma.adddemo.data.repositories
 
 import com.grishma.adddemo.db.DepartmentDatabase
 import com.grishma.adddemo.db.entities.DepartmentItem
-import com.grishma.adddemo.db.entities.EmployeeItem
 
 class DepartmentRepository(
     private val db: DepartmentDatabase
